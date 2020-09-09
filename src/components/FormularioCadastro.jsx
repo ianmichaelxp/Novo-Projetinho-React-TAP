@@ -5,10 +5,10 @@ function FormularioCadastro() {
   return (
     <form>
 
-      <TextField id="nome" label="Nome" variant="outlined" />
+      <TextField id="nome" label="Nome" variant="outlined" fullWidth="true" />
 
-      <TextField id="sobrenome" label="Sobrenome" variant="outlined" />
-      <TextField id="cpf" label="CPF" variant="outlined" />
+      <TextField id="sobrenome" label="Sobrenome" variant="outlined" fullWidth="true" />
+      <TextField id="cpf" label="CPF" variant="outlined" fullWidth="true"/>
       <label>Promoções</label>
       <input type="checkbox" />
 
