@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import DadosPessoais from "./DadosPessoais";
 import DadosUsuario from "./DadosUsuario";
 import DadosEntrega from "./DadosEntrega";
-import { Typography } from "@material-ui/core";
 
 function FormularioCadastro({ aoEnviar, validarCPF }) {
   const [etapaAtual, setEtapaAtual] = useState(0);
@@ -12,8 +11,9 @@ function FormularioCadastro({ aoEnviar, validarCPF }) {
     <DadosEntrega aoEnviar={aoEnviar} />,
   ];
 
-  function proximoForm() {
+  function proximoForm(dados) {
     setEtapaAtual(etapaAtual + 1);
+    aoEnviar(dados);
   }
 
   function formularioAtual(etapa) {

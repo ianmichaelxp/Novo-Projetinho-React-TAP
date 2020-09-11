@@ -19,7 +19,12 @@ class App extends Component
 
 }
 function aoEnviarFormulario(dados) {
-   return console.log(dados);
+    const bd = [];
+    bd.push(dados);
+    bd.forEach(element => {
+    console.log(element);
+   }); 
+   console.log(bd);
 }
 
 function validarCPF(cpf)
