@@ -11,7 +11,7 @@ class App extends Component
   {
     return (
       <Container component="article" maxWidth="sm">
-        <Typography variant="h3" component="h1">Formulário de Cadastro</Typography>
+        <Typography align="center" variant="h4" component="h1">Preencha para receber nosso livro</Typography>
         <FormularioCadastro aoEnviar={aoEnviarFormulario} validarCPF={validarCPF}/>
       </Container>
     );
@@ -19,12 +19,7 @@ class App extends Component
 
 }
 function aoEnviarFormulario(dados) {
-    const bd = [];
-    bd.push(dados);
-    bd.forEach(element => {
-    console.log(element);
-   }); 
-   console.log(bd);
+    console.log(dados);
 }
 
 function validarCPF(cpf)
