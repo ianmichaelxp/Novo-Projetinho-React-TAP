@@ -1,0 +1,29 @@
+version: "3.6"
+services:
+  frontend:
+    image: ianmic/docker-frontend
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+    networks:
+      - production-network
+  backend:
+    image: ianmic/docker-backend
+    depends_on:
+      - banco_de_dados
+    environment:
+      - DATABASE_HOST=banco_de_dados
+      - PORTA=5000
+    ports:
+      - "5000:5000"
+    networks:
+      - production-network
+  banco_de_dados:
+    image: mongo
+    networks:
+      - production-network
+
+networks:
+  production-network:
+    driver: bridge

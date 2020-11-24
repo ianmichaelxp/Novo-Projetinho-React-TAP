@@ -7,11 +7,12 @@ import 'fontsource-roboto';
 
 function App ()
 {
+  const urlBackend = `http://${process.env.REACT_APP_HOST_BACKEND}:${process.env.REACT_APP_URL_BACKEND}`
   const [listaDeCadastros, setListaDeCadastros] = useState([]);
 
   useEffect(async() => {
     let res = await axios
-    .get('http://localhost:5000/cadastros');
+    .get(urlBackend);
     setListaDeCadastros(res.data);
   }, []);
 
@@ -43,7 +44,7 @@ function App ()
 
   function aoEnviarFormulario(dados) 
   {    
-    axios.post('http://localhost:5000/cadastros', dados)
+    axios.post(urlBackend, dados)
     .then(res => {
       //console.log(dados);
     });

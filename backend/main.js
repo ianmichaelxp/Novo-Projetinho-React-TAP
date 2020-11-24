@@ -1,3 +1,6 @@
+require('dotenv').config();
+
+const PORTA = parseInt(process.env.PORTA);
 const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -17,13 +20,8 @@ db.once('open', async() => {
 
     app.use('/cadastros', cadastroController);
 
-    app.listen(5000, () => {
-        console.log('Servidor rodando no endereço http://localhost:5000');
+    app.listen(PORTA, () => {
+        console.log('Servidor rodando no endereço http://localhost:' + PORTA);
     })
 
-    // let c1 = new Cadastro({ nome: 'Michael', valor: '2' });
-    // await c1.save();
-    // console.log("c1 está salvo");
-    // let cadastros = await Cadastro.find();
-    // console.log(cadastros);
 });

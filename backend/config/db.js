@@ -1,6 +1,9 @@
-const mongoose = require('mongoose');
-const DATABASE_URL = 'mongodb://localhost/livro';
+require('dotenv').config();
 
-mongoose.connect(DATABASE_URL, { useNewUrlParser: true });
+const mongoose = require('mongoose');
+
+const DATABASE_HOST = process.env.DATABASE_HOST;
+
+mongoose.connect(`mongodb://${DATABASE_HOST}:27017/livro`, { useNewUrlParser: true });
 
 module.exports = mongoose.connection;
